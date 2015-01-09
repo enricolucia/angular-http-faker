@@ -1,6 +1,6 @@
 /*global angular*/
 
-angular.module('faker.http-faker', ['faker.data'])
+angular.module('httpFaker', ['httpFaker.data'])
 
   .config(['$provide', function( $provide) {
     $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);

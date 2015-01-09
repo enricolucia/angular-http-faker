@@ -48,7 +48,7 @@
   <script src="data.js"></script>
   <script>
   /*global angular*/
-  var demo = angular.module('demo', ['faker.http-faker']);
+  var demo = angular.module('demo', ['httpFaker']);
 
   demo.controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('/api/todos').success(function (data) {

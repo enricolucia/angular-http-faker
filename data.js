@@ -1,5 +1,5 @@
 /*global angular*/
-angular.module('faker.data', [])
+angular.module('httpFaker.data', [])
   .factory('httpData', [function () {
     return {
           // Your Fake GET data to be returned.

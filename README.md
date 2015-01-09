@@ -23,7 +23,7 @@ Angular-http-faker uses the following tools/library:
  * Include angular-http-faker.js to your html
  * Customize data.js according to what your http requests should behave like
  * Include data.js to your html after angular-http-faker.js
- * Add as a dependency to your app `faker.http-faker`
+ * Add as a dependency to your app `httpFaker`
  * Start to use your $http request as you wish
 
 ### Development
