@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+  <title>Angular http faker - demo</title>
+  <link rel="stylesheet" href="http://getskeleton.com/dist/css/skeleton.css">
+</head>
+<body ng-controller="MainCtrl">
+  <div class="container">
+    <h1 class="section-heading">Angular http faker</h1>
+    <div class="row">
+      <div class="one-half column">
+        <h4>[GET]</h4>
+        <ul>
+          <li ng-repeat="obj in getData">
+            {{obj.id}} <br/>
+            {{obj.title}} <br/>
+            {{obj.completed}} <br/>
+          </li>
+        </ul>
+
+        <h4>[POST]</h4>
+        <ul>
+          <li ng-repeat="post in postData">
+            {{post | json}}
+          </li>
+        </ul>
+      </div>
+      <div class="one-half column">
+        <h4>[PUT]</h4>
+        <ul>
+          <li ng-repeat="put in putData">
+            {{put | json}}
+          </li>
+        </ul>
+
+        <h4>[DELETE]</h4>
+        <ul>
+          <li>
+            {{deleteData}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-mocks.js"></script>
+  <script src="angular-http-faker.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+  /*global angular*/
+  var demo = angular.module('demo', ['faker.http-faker']);
+
+  demo.controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http.get('/api/todos').success(function (data) {
+      $scope.getData = data;
+    });
+
+    $http.post('/api/todos', {
+      title: 'Item coming from POST request',
+      completed: true
+    }).success(function (data) {
+      $scope.postData = data;
+    });
+
+    $http.delete('/api/todos/2').success(function (data) {
+      $scope.deleteData = "DELETE Completed";
+    });
+
+    $http.put('/api/todos/2', {
+      title: 'Title changed',
+    }).success(function (data) {
+      $scope.putData = data;
+    });
+
+  }]);
+  </script>
+</body>
+</html>
