@@ -15,7 +15,7 @@ Demo here: http://embed.plnkr.co/qGKhRdrVFFMkvC2R2048
 Angular-http-faker uses the following tools/library:
 
 * [AngularJS] - HTML enhanced for web apps!
-* [Angular-Mocks] - Testing related angulary library
+* [Angular-Mocks] - Testing related angular library
 
 
 ### Installation
