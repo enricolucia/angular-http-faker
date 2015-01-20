@@ -1,4 +1,4 @@
-# Angular http faker
+# Angular http faker [![Code Climate](https://codeclimate.com/github/enricolucia/angular-http-faker/badges/gpa.svg)](https://codeclimate.com/github/enricolucia/angular-http-faker)
 
 A Backend less http requests faker useful to be injected in plunker or jsfiddle projects.
 
